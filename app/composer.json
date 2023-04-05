@@ -89,10 +89,16 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "@static-analysis"
         ],
         "post-update-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "@static-analysis"
+        ],
+        "static-analysis": [
+            "./vendor/bin/phpcs --standard=Symfony src/",
+            "./vendor/bin/php-cs-fixer fix src/ --rules=@Symfony,@PSR1,@PSR2,@PSR12"
         ]
     },
     "conflict": {

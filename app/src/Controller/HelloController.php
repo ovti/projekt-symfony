@@ -9,6 +9,10 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/hello')]
 class HelloController extends AbstractController
 {
+    /**
+     * @param string $name
+     * @return Response
+     */
     #[Route(
         '/{name}',
         name: 'hello_index',

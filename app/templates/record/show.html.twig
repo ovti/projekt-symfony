@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    View record
+    {{ 'title.record_view'|trans({'%id%': record.id|default()}) }}
 {% endblock %}
 
 {% block body %}
@@ -20,4 +20,7 @@
             Record not found.
         </p>
     {% endif %}
+    <p>
+        <a href="{{ url('record_index') }}">Back</a>
+    </p>
 {% endblock %}

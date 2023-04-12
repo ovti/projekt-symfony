@@ -9,8 +9,10 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/hello')]
 class HelloController extends AbstractController
 {
+
+
     /**
-     * @param string $name
+     * @param  string $name
      * @return Response
      */
     #[Route(
@@ -26,5 +28,8 @@ class HelloController extends AbstractController
             'hello/index.html.twig',
             ['name' => $name]
         );
-    }
-}
+
+    }//end index()
+
+
+}//end class

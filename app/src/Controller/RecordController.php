@@ -35,10 +35,9 @@ class RecordController extends AbstractController
             'record/index.html.twig',
             ['records' => $records]
         );
-    }// end index()
+    }
 
-    // ...
-
+// end index()
     /**
      * Show action.
      *

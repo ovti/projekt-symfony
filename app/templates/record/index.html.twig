@@ -2,24 +2,24 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 {% endblock %}
 
 {% block title %}
-    Records list
+    {{ 'title.record_list'|trans }}
 {% endblock %}
 
 {% block body %}
-    <h1>Records list</h1>
+    <h1>{{ 'title.record_list'|trans }}</h1>
     {% if records is defined and records|length %}
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Tags</th>
+                <th>{{ 'label.id'|trans }}</th>
+                <th>{{ 'label.title'|trans }}</th>
+                <th>{{ 'label.content'|trans }}</th>
                 <th scope="col">
-                    Actions
+                    {{ 'label.actions'|trans }}
                 </th>
             </tr>
             </thead>
@@ -29,16 +29,14 @@
                     <td>{{ record.id }}</td>
                     <td>{{ record.title }}</td>
                     <td>{{ record.tags|join(', ') }}</td>
-                    <td>&nbsp;
-                        <a href="{{ url('record_show', {'id': record.id}) }}">view</a>
-                    </td>
+                    <td>&nbsp;</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     {% else %}
         <p>
-            List is empty.
+            {{ 'message.empty_list'|trans }}
         </p>
     {% endif %}
 {% endblock  %}

@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+{% endblock %}
+
 {% block title %}
     {{ 'title.record_view'|trans({'%id%': record.id|default()}) }}
 {% endblock %}
@@ -17,10 +22,10 @@
         </dl>
     {% else %}
         <p>
-            Record not found.
+            {{ 'message.empty_list'|trans }}
         </p>
     {% endif %}
     <p>
-        <a href="{{ url('record_index') }}">Back</a>
+        <a href="{{ url('record_index') }}">{{ 'label.back'|trans }}</a>
     </p>
 {% endblock %}

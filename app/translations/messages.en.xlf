@@ -22,6 +22,14 @@
         <source>label.tags</source>
         <target>Tags</target>
       </trans-unit>
+      <trans-unit id="label.view">
+        <source>label.view</source>
+        <target>View</target>
+      </trans-unit>
+      <trans-unit id="label.back">
+        <source>label.back</source>
+        <target>Back</target>
+      </trans-unit>
       <trans-unit id="message.empty_list">
         <source>message.empty_list</source>
         <target>List is empty.</target>

@@ -10,19 +10,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * Class RecordController.
- */
 #[Route('/record')]
 class RecordController extends AbstractController
 {
-    /**
-     * Index action.
-     *
-     * @param RecordRepository $repository Record repository
-     *
-     * @return Response HTTP response
-     */
     #[Route(
         name: 'record_index',
         methods: 'GET'
@@ -37,15 +27,6 @@ class RecordController extends AbstractController
         );
     }
 
-// end index()
-    /**
-     * Show action.
-     *
-     * @param RecordRepository $repository Record repository
-     * @param int              $id         Record id
-     *
-     * @return Response HTTP response
-     */
     #[Route(
         '/{id}',
         name: 'record_show',
@@ -60,5 +41,5 @@ class RecordController extends AbstractController
             'record/show.html.twig',
             ['record' => $record]
         );
-    }// end show()
-}// end class
+    }
+}

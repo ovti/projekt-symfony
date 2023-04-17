@@ -26,7 +26,6 @@ class RecordController extends AbstractController
             ['records' => $records]
         );
     }
-
     #[Route(
         '/{id}',
         name: 'record_show',

@@ -6,10 +6,10 @@
 namespace App\Controller;
 
 use App\Entity\Task;
-use App\Repository\TaskRepository;
-use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Knp\Component\Pager\PaginatorInterface;
+use App\Repository\TaskRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -19,10 +19,13 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/task')]
 class TaskController extends AbstractController
 {
+// ...
     /**
      * Index action.
      *
-     * @param TaskRepository $taskRepository Task repository
+     * @param Request            $request        HTTP Request
+     * @param TaskRepository     $taskRepository Task repository
+     * @param PaginatorInterface $paginator      Paginator
      *
      * @return Response HTTP response
      */
@@ -37,6 +40,7 @@ class TaskController extends AbstractController
 
         return $this->render('task/index.html.twig', ['pagination' => $pagination]);
     }
+// ...
 
     /**
      * Show action.

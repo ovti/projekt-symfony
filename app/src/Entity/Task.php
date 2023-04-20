@@ -56,6 +56,7 @@ class Task
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $title = null;
 
+// ...
     /**
      * Category.
      *
@@ -64,6 +65,7 @@ class Task
     #[ORM\ManyToOne(targetEntity: Category::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
+// ...
 
     /**
      * Getter for Id.

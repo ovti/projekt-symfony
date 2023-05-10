@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
+use App\Repository\TaskRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -30,6 +31,10 @@ class CategoryService implements CategoryServiceInterface
 
     public function getPaginatedList(int $page): PaginationInterface
     {
-        // TODO: Implement getPaginatedList() method.
+        return $this->paginator->paginate(
+            $this->categoryRepository->queryAll(),
+            $page,
+            TaskRepository::PAGINATOR_ITEMS_PER_PAGE
+        );
     }
 }

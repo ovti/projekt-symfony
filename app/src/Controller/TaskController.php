@@ -21,6 +21,7 @@ class TaskController extends AbstractController
 {
     /**
      * Task service.
+     *
      */
     private TaskServiceInterface $taskService;
 

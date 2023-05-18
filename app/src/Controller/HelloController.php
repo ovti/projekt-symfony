@@ -6,9 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Hello controller.
+ */
 #[Route('/hello')]
 class HelloController extends AbstractController
 {
+    /**
+     * @param string $name
+     * @return Response
+     */
     #[Route(
         '/{name}',
         name: 'hello_index',

@@ -24,4 +24,3 @@ class HelloController extends AbstractController
         );
     }// end index()
 }// end class
-
